@@ -23,7 +23,7 @@ let playerInfo = [
 
 let players = ["Akhil", "yatik", "sonu","Monu"];
 delete players[2];
-console.log(players);
+console.log(players[2]);
 
 
 // let string1 = "Akhil, yatik, * sonu, monu, varun";
