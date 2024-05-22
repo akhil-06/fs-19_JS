@@ -1,12 +1,79 @@
-let div = document.querySelector("div");
-div.addEventListener("click", function(event){
-    if(event.target.tagName === "BUTTON"){
-        console.log(event.target.innerText);
-    }
-    if(event.target.innerText === "Button 5"){
-        console.log("Button 5 is clciked!!!!");
-    }
+
+let categoryFilter = document.getElementById("category_filter")
+
+let productList = document.getElementById("product_list");
+
+// console.log(categoryFilter, productList);
+
+categoryFilter.addEventListener("change", function(){
+    let selectedCategory = categoryFilter.value;
+    console.log(selectedCategory);
+
+    //hide or show the products
+    let products = document.querySelectorAll(".product");
+    // console.log(products);
+    products.forEach(function(product){
+        let productCategory = product.getAttribute('data-category');
+        // console.log(productCategory); 
+
+        if(selectedCategory === productCategory || selectedCategory === "all"){
+            product.style.display = "block";
+        }else{
+            product.style.display = "none";
+        }
+    })
 })
+
+
+
+
+
+
+
+
+
+// function sum(){
+//     console.log(2+3);
+// }
+
+
+// let div = document.querySelector("div");
+// // console.log(div);
+// div.addEventListener("click", function(event){
+//     // console.log(event);
+//     if(event.target.innerText === "Button 3"){
+//         sum();
+//     }
+//     // console.log(event)
+// })
+
+
+// let buttonArray = document.querySelectorAll("button");
+// // console.log(buttonArray);
+// buttonArray.forEach(function(button){
+//     // console.log(button);
+//     button.addEventListener("click", function(){
+//         console.log("button is clicked!!!");
+//     })
+// })
+
+
+
+
+
+
+
+
+
+// let div = document.querySelector("div");
+// div.addEventListener("click", function(event){
+//     if(event.target.tagName === "BUTTON"){
+//         console.log(event.target.innerText);
+//     }
+//     if(event.target.innerText === "Button 5"){
+//         console.log("Button 5 is clciked!!!!");
+//     }
+// })
 
 
 
