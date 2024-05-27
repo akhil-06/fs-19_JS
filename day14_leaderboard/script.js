@@ -71,12 +71,15 @@ function activateButtons(){
         // console.log(el);
         el.addEventListener("click", function(e){
             console.log(e);
-            if(e.srcElement.classList.value === 'but1'){
+            if (e.target.classList.contains('but1')) {
                 data[index].score += 5;
-            }else if(e.srcElement.classList.value === 'but2'){
+                updateData(); // Update data after change
+            } else if (e.target.classList.contains('but2')) {
                 data[index].score -= 5;
-            }else if(e.srcElement.classList.value === 'del'){
-                data.slice(index,1);
+                updateData(); // Update data after change
+            } else if (e.target.classList.contains('del')) {
+                data.splice(index, 1); // Remove the item
+                updateData(); // Update data after change
             }
         })
     })
