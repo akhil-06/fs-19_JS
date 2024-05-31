@@ -1,37 +1,43 @@
+//async await
+async function tellJoke() {
+  try {
+    let joke = await fetchRandomJoke();
+    let translatedJoke = await translateJoke(joke);
+    let postJoke = await postSingleJoke(translatedJoke);
+  } catch (e) {
+    console.log("Error", e);
+  }
+}
 
 //promises
-fetchRandomJoke()
-.then((joke)=>{
-    console.log(joke);
-    return translateJoke(joke);
-})
-.then((translatedJoke)=>{
-    console.log(translatedJoke);
-    return postJoke(translatedJoke);
-})
-.then(()=>{
-    console.log("Joke is posted successfully");
-})
-.catch((error)=>{
-    console.log('something went wrong',error);
-})
+// fetchRandomJoke()
+// .then((joke)=>{
+//     console.log(joke);
+//     return translateJoke(joke);
+// })
+// .then((translatedJoke)=>{
+//     console.log(translatedJoke);
+//     return postJoke(translatedJoke);
+// })
+// .then(()=>{
+//     console.log("Joke is posted successfully");
+// })
+// .catch((error)=>{
+//     console.log('something went wrong',error);
+// })
 
+// callback hell
+// fetchRandomJoke((joke) =>{
+//     console.log(joke);
 
-//callback hell
-fetchRandomJoke((joke) =>{
-    console.log(joke);
+//     translateJoke(joke, (translatedJoke)=>{
+//         console.log(translatedJoke);
 
-    translateJoke(joke, (translatedJoke)=>{
-        console.log(translatedJoke);
-
-        postJoke(translatedJoke, ()=>{
-            console.log("Joke posted successfully!!!");
-        })
-    })
-})
-
-
-
+//         postJoke(translatedJoke, ()=>{
+//             console.log("Joke posted successfully!!!");
+//         })
+//     })
+// })
 
 // let userLoggedIn = true;
 
@@ -39,7 +45,7 @@ fetchRandomJoke((joke) =>{
 //     let promise = new Promise(function(res, rej){
 //         if(userLoggedIn === true){
 //             setTimeout(function(){
-//                 res('user is loggedIN');
+//                 res();
 //                 }, 1000);
 //         }else{
 //             rej('user is not loggedIN');
@@ -48,24 +54,14 @@ fetchRandomJoke((joke) =>{
 //     return promise;
 // }
 
-
 // userLoggeddIn()
-// .then(function(data){
-//     console.log(data);
+// .then(function(){
+//     console.log("user is loggedIN");
 // })
 // .catch(function(data){
 //     console.log(data);
 // })
 // console.log(promise);
-
-
-
-
-
-
-
-
-
 
 // // console.log("hello world!!");
 
