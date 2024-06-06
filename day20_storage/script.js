@@ -29,6 +29,11 @@ let arrStrigify = JSON.stringify(myArray);
 localStorage.setItem("arr", arrStrigify);
 // console.log(JSON.parse(localStorage.getItem("arr")));
 
+// let btn = document.querySelector("button");
+// btn.onmousedown = function(){
+
+// }
+
 // console.log("ksdjbfv");
 //setitem, getitem, removeitem, clear
 // localStorage.setItem("Akhil", 22)
