@@ -1,29 +1,57 @@
 // console.log("hello world");
+let counter = 0;
 
-// let counter = 0;
-
-
-function incresevalue() {
-  let counter = 0;
-  let result = 5;
-  return function plus() {
-    counter = counter + 1;
-    result+=1;
-    return {counter,result};
-  }
+function getData() {
+  console.log("encountered " + counter);
 }
 
-let ans = incresevalue();
-console.log(ans().counter);
-console.log(ans().counter);
-console.log(ans().result);
-console.log(ans().result);
+function mydebounceFunc(call, delay) {
+  let timer;
+  return function () {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      call();
+    }, delay);
+  };
+}
 
-let ans1 = incresevalue()
-console.log(ans1());
-console.log(ans1());
+let betterFunction = mydebounceFunc(getData, 300);
 
+// let counter = 0;
+// function outer() {
+//   let x = 10;
+//   function inner() {
+//     var y = 5;
+//     // x = 30;
+//     // x = x+30;
+//     console.log(x++);
+//   }
+//   // x = 20;
+//   return inner;
+// }
+// var innerFunc = outer();
+// innerFunc();
+// innerFunc();
 
+// function incresevalue() {
+//   let counter = 0;
+//   let result = 5;
+//   return function plus() {
+//     counter = counter + 1;
+//     result+=1;
+//     return {counter,result};
+//   }
+// }
+
+// let ans = incresevalue();
+// console.log(ans().counter);
+// console.log(ans().counter);
+// console.log(ans().result);
+// console.log(ans().result);
+
+// let ans1 = incresevalue()
+// console.log(ans1());
+// console.log(ans1());
 
 // document.getElementById("demo").innerHTML =
 //   "this counter is:- " + incresevalue();
